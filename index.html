@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MetaLens | File Metadata Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- EXIF JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+
+    <!-- PDF JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.5.136/pdf.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+
+    <div class="bg-blur blur-1"></div>
+    <div class="bg-blur blur-2"></div>
+
+    <main class="container">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="badge">
+                ✨ AI Powered Metadata Analysis
+            </div>
+
+            <h1>
+                Meta<span>Lens</span>
+            </h1>
+
+            <p>
+                Upload Images and PDFs to inspect metadata,
+                EXIF camera details, file properties,
+                dimensions, and privacy risks.
+            </p>
+
+        </section>
+
+        <!-- UPLOAD -->
+
+        <section class="upload-section">
+
+            <div class="upload-card" id="uploadBox">
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept="image/*,.pdf"
+                    hidden
+                >
+
+                <label for="fileInput" class="upload-label">
+
+                    <div class="upload-icon">
+                        📂
+                    </div>
+
+                    <h2>Drop Files Here</h2>
+
+                    <p>
+                        JPG • PNG • JPEG • PDF
+                    </p>
+
+                    <span class="browse-btn">
+                        Browse Files
+                    </span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+        <!-- PREVIEW -->
+
+        <section>
+
+            <div class="section-title">
+                File Preview
+            </div>
+
+            <div id="previewContainer">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        🔍
+                    </div>
+
+                    <h3>No File Uploaded</h3>
+
+                    <p>
+                        Upload an image or PDF to begin analysis
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard">
+
+            <div class="panel">
+                <h3>📄 General Information</h3>
+                <div id="generalInfo"></div>
+            </div>
+
+            <div class="panel">
+                <h3>📊 File Details</h3>
+                <div id="fileDetails"></div>
+            </div>
+
+            <div class="panel">
+                <h3>📸 EXIF Metadata</h3>
+                <div id="exifInfo"></div>
+            </div>
+
+            <div class="panel">
+                <h3>🛡 Privacy Scanner</h3>
+                <div id="privacyInfo"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
